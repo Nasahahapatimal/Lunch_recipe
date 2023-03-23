@@ -1,0 +1,7 @@
+{"recept": "Lovacke snicle", "snicle": "800", "crni luk": "1", "beli luk": "1", "slatka pavlaka": "1", "brasno": "200", "ulje": "100", "kocka za supu": "1"}
+{"recept": "Rolat sarma", "Listovi kiselog kupusa": "6", "Mleveno meso": "350", "Pirinac": "100", "crni luk": "1", "Biber": "1", "Suvi biljni zacin": "1", "\u0160argarepa": "1"}
+{"recept": "Pire sa krompirom i blitvom", "Krompir": "500", "Blitva": "500", "So": "100", "Ulje": "50", "Mleko": "50"}
+{"recept": "Piletina u krem sosu sa povrcem", "Pileci file": "600", "Carska mesavina": "750", "Brokoli": "500", "Beli luk": "3", "Krema za kuvanje": "400", "Mleveni biber": "30"}
+{"recept": "Pileca krilca", "Pileca krilca": "10", "Ulje": "2", "Suvi biljni zacin": "1", "Crvena mlevena paprika": "1"}
+{"recept": "Raspucali krompir", "Krompir": "500", "Maslinovo ulje": "100", "Persun": "50", "Vlasac": "100", "Origano": "50", "Ruzmarin": "50", "Beli luk": "2"}
+{"recept": "Musaka na kockice", "Krompir": "1000", "Crni luk": "1", "Suvi zacin": "1", "Jaja": "3", "Jogurt": "200", "Maslac": "100"}

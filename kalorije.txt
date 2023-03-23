@@ -1,0 +1,50 @@
+Pileci file|100|22.5|0|2.62|10
+Pileci batak|100|27|0|11.5|220
+Pileca dzigerica|100|16.92|0|4.83|119
+Svinjski but|100|25.7|0|20.8|297
+Juneci but|100|14.97|0|23.52|276
+Jaja|komad|8.2|0|6.9|95.1
+Som|100|18.47|0|2.9|105
+Oslic|100|17|0.1|0.3|71
+Pastrmka|100|21.5|0|11.4|195
+Skusa|100|19|0|12|184
+Losos|100|22|0|12|206
+Tuna|100|24.8|0|4.9|144
+Sardina|100|24.62|0|11.45|208
+Kravlje mleko|100|3|4.5|2.8|55
+Jogurt|100|3.3|4|1|41
+Grcki jogurt|100|3.8|5|10|125
+Pavlaka za kuvanje|100|2.4|4.4|20|200
+Feta sir|100|13.5|2.2|17.5|220
+Kackavalj|100|25|1|30|374
+Beli pirinac|100|7|79|1|368
+Integralni pirinac|100|9.2|76.2|2.7|362
+Testenine|100|13|75|1.5|371
+Ovsene pahuljice|100|13.3|66|5|366.7
+Heljdine pahuljice|100|13.25|71.5|3.4|343
+Zito|100|12|61|2|335
+Proso|100|11|73|4.2|378
+Griz|100|9.8|70.7|0.6|342
+Laneno seme|100|23.4|33.9|24.9|543
+Susam seme|100|17.7|23.4|49.7|573
+Cia seme|100|19.3|8.3|29.1|372
+Orah|100|15.8|8.8|61.4|650
+Lesnik|100|14.9|16.7|60.8|670
+Badem|100|21.1|22.1|49.5|574.7
+Maslinovo ulje|100|0|0|99.9|900
+Suncokretovo ulje|100|0|0|100|900
+Svinjska mast|100|0|0|100|900
+Pasulj|100|9.01|26.22|0.65|143
+Grasak|100|5.42|14.45|0.4|81
+Krompir|100|2|17|0.1|77
+Slatki krompir|100|1.57|20.12|0.05|86
+Sargarepa|100|0.9|9.6|0.2|41
+Paradajz|100|0.9|2.8|0|14
+Paprika|100|1|5|0|28
+Jabuka|100|0.3|14|2.4|52
+Banana|komad|1.3|27.6|0.4|106.8
+Kruska|100|0.4|13.8|0|58
+Dinja|100|0.8|7.9|0.1|34
+Bobicasto voce|100|0.7|14|0.3|57
+Merica proteina|30|22|2.4|1.7|115
+Palacinke|komad|10|58|17|417.5
