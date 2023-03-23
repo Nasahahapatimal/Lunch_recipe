@@ -140,7 +140,7 @@ class Kuhinja:
         pass
 
     def ispis_recepta_dan(self):
-        pass
+        pass #Testing samo
 
     def spisak_za_kupovinu(self, *args):
 
