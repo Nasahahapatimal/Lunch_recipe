@@ -1,25 +1,26 @@
 from tkinter import *
+from customtkinter import *
 import customtkinter
 from FInalWork import *
 from PIL import ImageGrab
 
 
-customtkinter.set_appearance_mode("default")
+customtkinter.set_appearance_mode("dark")
+customtkinter.set_default_color_theme("green")
 
 root = customtkinter.CTk()
 root.title("Kuhinja")
 root.geometry("450x600")
-bold_font = ("TkDefaultFont", 11, "bold")
-bold_font2 = ("TkDefaultFont", 9, "bold")
+
 
 options = []
 for x in a.recepti:
     options.append(x["recept"])
 
-l_0 = customtkinter.CTkLabel(root, text="PONEDELJAK", font=bold_font).grid(
+l_0 = customtkinter.CTkLabel(root, text="PONEDELJAK").grid(
     row=0, column=0, padx=0, pady=5)
 
-l_1 = customtkinter.CTkLabel(root, text="DORUCAK", font=bold_font2).grid(
+l_1 = customtkinter.CTkLabel(root, text="DORUCAK").grid(
     row=1, column=0, padx=2, pady=2)
 l_2 = customtkinter.CTkLabel(root, text="---")
 l_2.grid(row=3, column=0, padx=2, pady=2)
@@ -32,7 +33,7 @@ b = customtkinter.CTkButton(root, text="Odaberi dorucak", command=lambda: [(
 b.grid(row=4, column=0, padx=2, pady=2)
 
 
-l_3 = customtkinter.CTkLabel(root, text="RUCAK", font=bold_font2).grid(
+l_3 = customtkinter.CTkLabel(root, text="RUCAK").grid(
     row=5, column=0, padx=2, pady=25)
 l_4 = customtkinter.CTkLabel(root, text="---")
 l_4.grid(row=6, column=0, padx=2, pady=2)
@@ -44,7 +45,7 @@ selected_option1.set("")
 option_menu = OptionMenu(root, selected_option1, *options)
 option_menu.grid(row=6, column=1, padx=15, pady=2)
 
-l_5 = customtkinter.CTkLabel(root, text="VECERA", font=bold_font2).grid(
+l_5 = customtkinter.CTkLabel(root, text="VECERA").grid(
     row=8, column=0, padx=2, pady=25)
 l_6 = customtkinter.CTkLabel(root, text="---")
 l_6.grid(row=9, column=0, padx=2, pady=2)
@@ -58,7 +59,7 @@ option_menu.grid(row=9, column=1, padx=15, pady=2)
 
 
 def Dodaj_recept():
-    t = Toplevel(root)
+    t = CTkToplevel(root)
 
     t.geometry("300x600")
 
@@ -118,7 +119,7 @@ def Dodaj_recept():
 
 def dodaj_zacin():
 
-    t1 = Toplevel(root)
+    t1 = CTkToplevel(root)
     t1.geometry("300x450")
 
     l_1 = customtkinter.CTkLabel(t1, text="Naziv namirnice").pack()
@@ -160,7 +161,7 @@ def dodaj_zacin():
 
 
 def obrisi_recept():
-    t2 = Toplevel(root)
+    t2 = CTkToplevel(root)
     t2.geometry("300x450")
 
     options = []
