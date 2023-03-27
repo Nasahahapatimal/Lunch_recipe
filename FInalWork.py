@@ -198,8 +198,8 @@ class Kuhinja:
 a = Kuhinja()
 a.ucitaj_namirnice()
 a.ucitaj_recepte()
-print(a.spisak_za_kupovinu("Lovacke snicle",
-      "Rolat sarma", "Lovacke snicle", "Lovacke snicle", "Lovacke snicle"))
-a.stampaj()
+#print(a.spisak_za_kupovinu("Lovacke snicle",
+      #"Rolat sarma", "Lovacke snicle", "Lovacke snicle", "Lovacke snicle"))
+#a.stampaj()
 # for x, y in a.output.items():
 #print("{}: {}".format(x, y))
