@@ -65,15 +65,15 @@ def Dodaj_recept():
 
     def get_kwargs():
         kwargs = {}
-        lista = []
+        #lista = []
         for entry_pair in entries:
             key = entry_pair[0].get()
-            lista.append(entry_pair[1].get())
-            lista.append(entry_pair[2].get())
-            value = list(entry_pair[1].get() + entry_pair[2].get())
-            if key and lista:
+            #lista.append(entry_pair[1].get())
+            #lista.append(entry_pair[2].get())
+            value = (entry_pair[1].get() + "," +entry_pair[2].get()).split(",")
+            if key and value:
                 kwargs[key] = []
-                kwargs[key].append(lista)
+                kwargs[key].append(value)
                 kwargs[key] = kwargs[key][0]
 
         return kwargs
