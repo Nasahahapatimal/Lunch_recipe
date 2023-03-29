@@ -15,51 +15,67 @@ options = []
 for x in a.recepti:
     options.append(x["recept"])
 
-l_0 = customtkinter.CTkLabel(root, text="PONEDELJAK",font=("Helvetica",22, "bold")).place(relx = 0.12,rely = 0.02,anchor=customtkinter.N)
+l_0 = customtkinter.CTkLabel(root, text="PONEDELJAK", font=(
+    "Helvetica", 22, "bold")).place(relx=0.12, rely=0.02, anchor=customtkinter.N)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-l_1 = customtkinter.CTkLabel(root, text="DORUCAK",font=("Helvetica",12, "bold")).place(
-    relx = 0.12,rely = 0.1,anchor=customtkinter.N)
-combobox1 = customtkinter.CTkComboBox(master = root,values=options,variable="",width = 280)
-combobox1.place(relx = 0.12,rely = 0.15,anchor=customtkinter.N)
+l_1 = customtkinter.CTkLabel(root, text="DORUCAK", font=("Helvetica", 12, "bold")).place(
+    relx=0.12, rely=0.1, anchor=customtkinter.N)
+combobox1 = customtkinter.CTkComboBox(
+    master=root, values=options, variable="", width=280)
+combobox1.place(relx=0.12, rely=0.15, anchor=customtkinter.N)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-l_2 = customtkinter.CTkLabel(root, text="RUCAK",font=("Helvetica",12, "bold")).place(
-    relx = 0.12,rely = 0.25,anchor=customtkinter.N)
-combobox2 = customtkinter.CTkComboBox(master = root,values=options,variable="",width = 280)
-combobox2.place(relx = 0.12,rely = 0.3,anchor=customtkinter.N)
+l_2 = customtkinter.CTkLabel(root, text="RUCAK", font=("Helvetica", 12, "bold")).place(
+    relx=0.12, rely=0.25, anchor=customtkinter.N)
+combobox2 = customtkinter.CTkComboBox(
+    master=root, values=options, variable="", width=280)
+combobox2.place(relx=0.12, rely=0.3, anchor=customtkinter.N)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-l_3 = customtkinter.CTkLabel(root, text="VECERA",font=("Helvetica",12, "bold")).place(
-    relx = 0.12,rely = 0.4,anchor=customtkinter.N)
-combobox3 = customtkinter.CTkComboBox(master = root,values=options,variable="",width = 280)
-combobox3.place(relx = 0.12,rely = 0.45,anchor=customtkinter.N)
+l_3 = customtkinter.CTkLabel(root, text="VECERA", font=("Helvetica", 12, "bold")).place(
+    relx=0.12, rely=0.4, anchor=customtkinter.N)
+combobox3 = customtkinter.CTkComboBox(
+    master=root, values=options, variable="", width=280)
+combobox3.place(relx=0.12, rely=0.45, anchor=customtkinter.N)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
 def Dodaj_recept():
-    t = CTkToplevel(root)
 
+    t = CTkToplevel(root)
     t.geometry("300x600")
 
+ 
     def add_entry():
         l3_t = customtkinter.CTkLabel(t, text="Ime sastojka")
         l3_t.pack()
+
         new_e1_t = customtkinter.CTkEntry(t, placeholder_text="")
         new_e1_t.pack()
 
         l4_t = customtkinter.CTkLabel(t, text="Kolicina")
         l4_t.pack()
+
         new_e2_t = customtkinter.CTkEntry(t, placeholder_text="")
         new_e2_t.pack()
 
-        entries.append((new_e1_t, new_e2_t))
+        new_combobox_unit = customtkinter.CTkComboBox(t, values=["kom","kg","dl"], variable="", width=150)
+        new_combobox_unit.pack()
+
+        entries.append((new_e1_t, new_e2_t,new_combobox_unit))
 
     def get_kwargs():
         kwargs = {}
+        lista = []
         for entry_pair in entries:
             key = entry_pair[0].get()
-            value = entry_pair[1].get()
-            if key and value:
-                kwargs[key] = value
+            lista.append(entry_pair[1].get())
+            lista.append(entry_pair[2].get())
+            value = list(entry_pair[1].get() + entry_pair[2].get())
+            if key and lista:
+                kwargs[key] = []
+                kwargs[key].append(lista)
+                kwargs[key] = kwargs[key][0]
+
         return kwargs
 
     b = customtkinter.CTkButton(t, text="Dodaj recept", command=lambda: a.dodaj_recept(
@@ -91,7 +107,10 @@ def Dodaj_recept():
     e2_t = customtkinter.CTkEntry(t, placeholder_text="")
     e2_t.pack()
 
-    entries = [(e1_t, e2_t)]
+    combobox_unit = customtkinter.CTkComboBox(t, values=["kom","kg","dl"], variable="", width=150)
+    combobox_unit.pack()
+
+    entries = [(e1_t, e2_t, combobox_unit)]
 
 
 def dodaj_zacin():
@@ -199,6 +218,6 @@ def print_screenshot():
 
 
 b_1.configure(command=print_screenshot)
-b_1.place(relx = 0.85,rely =0.90)
+b_1.place(relx=0.85, rely=0.90)
 
 root.mainloop()

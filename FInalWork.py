@@ -144,7 +144,6 @@ class Kuhinja:
 
     def spisak_za_kupovinu(self, *args):
 
-        #output = {}
         for x in args:
             for recept in self.recepti:
                 if x.lower() == recept["recept"].lower():
@@ -152,7 +151,8 @@ class Kuhinja:
                         if key != "recept":
                             if key not in self.output:
                                 self.output[key] = 0
-                            self.output[key] += int(value)
+                            self.output[key] += int(value[0])
+    
 
     def stampaj(self):
 
@@ -198,8 +198,3 @@ class Kuhinja:
 a = Kuhinja()
 a.ucitaj_namirnice()
 a.ucitaj_recepte()
-#print(a.spisak_za_kupovinu("Lovacke snicle",
-      #"Rolat sarma", "Lovacke snicle", "Lovacke snicle", "Lovacke snicle"))
-#a.stampaj()
-# for x, y in a.output.items():
-#print("{}: {}".format(x, y))
