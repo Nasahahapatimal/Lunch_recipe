@@ -1,5 +1,5 @@
 {"recept": "Lovacke snicle", "snicle": "800", "crni luk": "1", "beli luk": "1", "slatka pavlaka": "1", "brasno": "200", "ulje": "100", "kocka za supu": "1"}
-{"recept": "Rolat sarma", "Listovi kiselog kupusa": "6", "Mleveno meso": "350", "Pirinac": "100", "crni luk": "1", "Biber": "1", "Suvi biljni zacin": "1", "\u0160argarepa": "1"}
+{"recept": "Rolat sarma", "Listovi kiselog kupusa": "6", "Mleveno meso": "350", "Pirinac": "100", "crni luk": "1", "Biber": "1", "Suvi biljni zacin": "1", "sargarepa": "1"}
 {"recept": "Pire sa krompirom i blitvom", "Krompir": "500", "Blitva": "500", "So": "100", "Ulje": "50", "Mleko": "50"}
 {"recept": "Piletina u krem sosu sa povrcem", "Pileci file": "600", "Carska mesavina": "750", "Brokoli": "500", "Beli luk": "3", "Krema za kuvanje": "400", "Mleveni biber": "30"}
 {"recept": "Pileca krilca", "Pileca krilca": "10", "Ulje": "2", "Suvi biljni zacin": "1", "Crvena mlevena paprika": "1"}

@@ -37,81 +37,76 @@ combobox3 = customtkinter.CTkComboBox(
 combobox3.place(relx=0.12, rely=0.45, anchor=customtkinter.N)
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------#
-
-
 def Dodaj_recept():
 
     t = CTkToplevel(root)
-    t.geometry("300x600")
-
- 
+    t.geometry("900x500")
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
     def add_entry():
-        l3_t = customtkinter.CTkLabel(t, text="Ime sastojka")
-        l3_t.pack()
+        global ad
+        frame = customtkinter.CTkFrame(t,fg_color = "transparent")
+        frame.pack(side=TOP, padx=5, pady=5)
 
-        new_e1_t = customtkinter.CTkEntry(t, placeholder_text="")
-        new_e1_t.pack()
+        new_e1_t = customtkinter.CTkEntry(frame, placeholder_text="")
+        new_e1_t.grid(row=0, column=0, padx=3, pady=3, sticky="ew")
 
-        l4_t = customtkinter.CTkLabel(t, text="Kolicina")
-        l4_t.pack()
+        new_e2_t = customtkinter.CTkEntry(frame, placeholder_text="")
+        new_e2_t.grid(row=0, column=1, padx=3, pady=3, sticky="ew")
 
-        new_e2_t = customtkinter.CTkEntry(t, placeholder_text="")
-        new_e2_t.pack()
+        new_combobox_unit = customtkinter.CTkComboBox(
+            frame, values=["pcs","spoon","kg","gr","mgr","l","dl","ml"], variable="", width=150)
+        new_combobox_unit.grid(row=0, column=2, padx=3, pady=3, sticky="ew")
 
-        new_combobox_unit = customtkinter.CTkComboBox(t, values=["kom","kg","dl"], variable="", width=150)
-        new_combobox_unit.pack()
-
-        entries.append((new_e1_t, new_e2_t,new_combobox_unit))
-
+        entries.append((new_e1_t, new_e2_t, new_combobox_unit))
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
     def get_kwargs():
         kwargs = {}
-        #lista = []
         for entry_pair in entries:
             key = entry_pair[0].get()
-            #lista.append(entry_pair[1].get())
-            #lista.append(entry_pair[2].get())
-            value = (entry_pair[1].get() + "," +entry_pair[2].get()).split(",")
+            value = (entry_pair[1].get() + "," +
+                     entry_pair[2].get()).split(",")
             if key and value:
                 kwargs[key] = []
                 kwargs[key].append(value)
                 kwargs[key] = kwargs[key][0]
-
         return kwargs
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    frame = customtkinter.CTkFrame(t,fg_color = "transparent")
+    frame.pack(side=TOP, padx=5, pady=5)
 
-    b = customtkinter.CTkButton(t, text="Dodaj recept", command=lambda: a.dodaj_recept(
-        recept=e_t.get(), **get_kwargs()))
-    b.pack()
+    frame1 = customtkinter.CTkFrame(t,fg_color = "transparent")
+    frame1.pack(side=TOP, padx=5, pady=5)
 
-    add_entry_button = customtkinter.CTkButton(
-        t, text="Dodaj novi sastojak", command=add_entry)
-    add_entry_button.pack(pady=10)
-
-    l1 = customtkinter.CTkLabel(t, text="")
-    l1.pack()
-
-    l_t = customtkinter.CTkLabel(t, text="Recept")
+    frame2 = customtkinter.CTkFrame(t,fg_color = "transparent")
+    frame2.place(relx = 0.8,rely = 0.8)
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    add_entry_button = customtkinter.CTkButton(frame2, text="Dodaj novi sastojak", command=lambda:add_entry())
+    add_entry_button.grid(row=1, column=0, padx=3, pady=3, sticky="ew")
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    b = customtkinter.CTkButton(frame2, text="Dodaj recept", command=lambda: a.dodaj_recept(recept=e_t.get(), **get_kwargs()))
+    b.grid(row=2, column=0, padx=3, pady=3, sticky="ew")
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    l_t = customtkinter.CTkLabel(frame, text="Naziv recepta")
     l_t.pack()
-
-    e_t = customtkinter.CTkEntry(t, placeholder_text="")
+    e_t = customtkinter.CTkEntry(frame, placeholder_text="")
     e_t.pack()
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
+    l1_t = customtkinter.CTkLabel(frame1, text="Ime sastojka")
+    l1_t.grid(row=0, column=0, padx=3, pady=3, sticky="ew")
 
-    l1_t = customtkinter.CTkLabel(t, text="Ime sastojka")
-    l1_t.pack()
+    e1_t = customtkinter.CTkEntry(frame1, placeholder_text="")
+    e1_t.grid(row=1, column=0 , padx=3, pady=3, sticky="ew")
 
-    e1_t = customtkinter.CTkEntry(t, placeholder_text="")
-    e1_t.pack()
+    l2_t = customtkinter.CTkLabel(frame1, text="Kolicina")
+    l2_t.grid(row=0, column=1, padx=3, pady=3, sticky="ew")
 
-    l2_t = customtkinter.CTkLabel(t, text="Kolicina")
-    l2_t.pack()
+    e2_t = customtkinter.CTkEntry(frame1, placeholder_text="")
+    e2_t.grid(row=1, column=1, padx=3, pady=3, sticky="ew")
 
-    e2_t = customtkinter.CTkEntry(t, placeholder_text="")
-    e2_t.pack()
-
-    combobox_unit = customtkinter.CTkComboBox(t, values=["kom","kg","dl"], variable="", width=150)
-    combobox_unit.pack()
-
+    combobox_unit = customtkinter.CTkComboBox(frame1, values=["pcs", "spoon", "kg", "gr", "mgr", "l", "dl", "ml"], variable="", width=150)
+    combobox_unit.grid(row=1, column=2, padx=3, pady=3, sticky="ew")
+#--------------------------------------------------------------------------------------------------------------------------------------------------------------#
     entries = [(e1_t, e2_t, combobox_unit)]
-
 
 def dodaj_zacin():
 
@@ -176,7 +171,6 @@ def obrisi_recept():
         text=a.obrisi_recept(jelo=selected_option.get())))
     b_t2.pack()
 
-
 menubar = Menu(master=root)
 
 accountmenu = Menu(menubar, tearoff=0)
@@ -193,7 +187,6 @@ menubar.add_command(label="Napravi spisak", command=lambda: [(a.spisak_za_kupovi
                                                              (a.spisak_za_kupovinu(
                                                                  a.odaberi_rucak(combobox2.get()))),
                                                              (a.spisak_za_kupovinu(a.odaberi_veceru(combobox3.get()))), (a.stampaj())])
-
 
 menubar.add_cascade(label="Exit", menu=exitmenu)
 exitmenu.add_command(label="Exit", command=root.destroy)
